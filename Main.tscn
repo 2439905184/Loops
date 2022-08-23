@@ -1,0 +1,268 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://button_pressed.tres" type="StyleBox" id=1]
+[ext_resource path="res://MemoryUsedDisplay.gd" type="Script" id=2]
+[ext_resource path="res://Fps.gd" type="Script" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+[ext_resource path="res://assets/Grv Kick 25.ogg" type="AudioStream" id=5]
+[ext_resource path="res://a.gd" type="Script" id=6]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="clear" type="Button" parent="."]
+margin_left = 352.0
+margin_top = 37.0
+margin_right = 390.0
+margin_bottom = 57.0
+text = "clear"
+
+[node name="JiJIa" type="Node2D" parent="."]
+__meta__ = {
+"_editor_description_": "通道机架"
+}
+
+[node name="CheckBox" type="CheckBox" parent="JiJIa"]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="SpinBox" type="SpinBox" parent="JiJIa"]
+margin_left = 27.0
+margin_top = 2.0
+margin_right = 101.0
+margin_bottom = 26.0
+
+[node name="Synth" type="Button" parent="JiJIa"]
+margin_left = 105.0
+margin_top = 4.0
+margin_right = 117.0
+margin_bottom = 24.0
+text = "Kick"
+
+[node name="kick" type="HBoxContainer" parent="JiJIa"]
+margin_left = 93.0
+margin_top = 37.0
+margin_right = 345.0
+margin_bottom = 57.0
+script = ExtResource( 6 )
+
+[node name="Button" type="Button" parent="JiJIa/kick"]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button2" type="Button" parent="JiJIa/kick"]
+margin_left = 16.0
+margin_right = 28.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button3" type="Button" parent="JiJIa/kick"]
+margin_left = 32.0
+margin_right = 44.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button4" type="Button" parent="JiJIa/kick"]
+margin_left = 48.0
+margin_right = 60.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button5" type="Button" parent="JiJIa/kick"]
+margin_left = 64.0
+margin_right = 76.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button6" type="Button" parent="JiJIa/kick"]
+margin_left = 80.0
+margin_right = 92.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button7" type="Button" parent="JiJIa/kick"]
+margin_left = 96.0
+margin_right = 108.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button8" type="Button" parent="JiJIa/kick"]
+margin_left = 112.0
+margin_right = 124.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button9" type="Button" parent="JiJIa/kick"]
+margin_left = 128.0
+margin_right = 140.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button10" type="Button" parent="JiJIa/kick"]
+margin_left = 144.0
+margin_right = 156.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button11" type="Button" parent="JiJIa/kick"]
+margin_left = 160.0
+margin_right = 172.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button12" type="Button" parent="JiJIa/kick"]
+margin_left = 176.0
+margin_right = 188.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button13" type="Button" parent="JiJIa/kick"]
+margin_left = 192.0
+margin_right = 204.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button14" type="Button" parent="JiJIa/kick"]
+margin_left = 208.0
+margin_right = 220.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button15" type="Button" parent="JiJIa/kick"]
+margin_left = 224.0
+margin_right = 236.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Button16" type="Button" parent="JiJIa/kick"]
+margin_left = 240.0
+margin_right = 252.0
+margin_bottom = 20.0
+custom_styles/pressed = ExtResource( 1 )
+toggle_mode = true
+
+[node name="Pattern" type="Node2D" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Pattern"]
+margin_left = 408.0
+margin_top = 6.0
+margin_right = 596.0
+margin_bottom = 30.0
+
+[node name="Label" type="Label" parent="Pattern/HBoxContainer"]
+margin_top = 5.0
+margin_right = 88.0
+margin_bottom = 19.0
+text = "Music Pattern"
+
+[node name="add" type="Button" parent="Pattern/HBoxContainer"]
+margin_left = 92.0
+margin_right = 112.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "+"
+
+[node name="rename" type="Button" parent="Pattern/HBoxContainer"]
+margin_left = 116.0
+margin_right = 177.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "rename"
+
+[node name="remove" type="Button" parent="Pattern/HBoxContainer"]
+margin_left = 181.0
+margin_right = 242.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "remove"
+
+[node name="MusicTimeTimer" type="Timer" parent="."]
+
+[node name="MusicTime" type="Label" parent="."]
+margin_left = 663.0
+margin_top = 8.0
+margin_right = 703.0
+margin_bottom = 22.0
+text = "0:00:00"
+
+[node name="MemoryUsedDisplay" type="Label" parent="."]
+margin_left = 725.0
+margin_top = 9.0
+margin_right = 844.0
+margin_bottom = 23.0
+text = "MemoryUsed:0MB"
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "内存占用"
+}
+
+[node name="Fps" type="Label" parent="."]
+margin_left = 889.0
+margin_top = 562.0
+margin_right = 1008.0
+margin_bottom = 576.0
+text = "MemoryUsed:0MB"
+script = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": "内存占用"
+}
+
+[node name="WaveFormDisplay" type="Node2D" parent="."]
+position = Vector2( 745, 13 )
+__meta__ = {
+"_editor_description_": "示波器"
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 867.0
+margin_top = 7.0
+margin_right = 949.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Play" type="Button" parent="HBoxContainer"]
+margin_right = 38.0
+margin_bottom = 20.0
+text = "Play"
+
+[node name="Stop" type="Button" parent="HBoxContainer"]
+margin_left = 42.0
+margin_right = 82.0
+margin_bottom = 20.0
+text = "Stop"
+
+[node name="SpinBox" type="SpinBox" parent="."]
+margin_left = 952.0
+margin_top = 8.0
+margin_right = 1026.0
+margin_bottom = 32.0
+value = 100.0
+prefix = "bpm"
+
+[node name="Kick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.46
+
+[connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

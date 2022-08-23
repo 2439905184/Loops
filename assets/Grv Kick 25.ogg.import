@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Grv Kick 25.ogg-7390425be72d216164a54031d872204e.oggstr"
+
+[deps]
+
+source_file="res://assets/Grv Kick 25.ogg"
+dest_files=[ "res://.import/Grv Kick 25.ogg-7390425be72d216164a54031d872204e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
