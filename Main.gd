@@ -10,16 +10,16 @@ func _ready():
 	print_debug(kick_paizi)
 	
 	for node in $JiJIa/kick.get_children():
-		node.connect("toggled",self,"_on_kick_toggled",[node.get_index()])
+		node.connect("toggled", self, "_on_kick_toggled", [node.get_index()])
 	pass
 	
 # 更新拍子
-func _on_kick_toggled(butto_pressed:bool, button_index:int):
+func _on_kick_toggled(butto_pressed: bool, button_index: int):
 	if butto_pressed:
 		kick_paizi[button_index] = 1
 	else:
 		kick_paizi[button_index] = 0
-	print_debug("拍子更新",kick_paizi)
+	print_debug("拍子更新", kick_paizi)
 	pass
 	
 func _on_Play_pressed():
@@ -32,6 +32,15 @@ func _on_Play_pressed():
 	print_debug(kick_paizi)
 	pass
 
+func _on_Stop_pressed():
+	play = false
+	
+	for i in kick_paizi:
+		if i == 1:
+			$Timer.stop()
+			
+	print_debug(kick_paizi, "stoped.")
+	pass 
 
 func _on_Timer_timeout():
 	
@@ -43,3 +52,4 @@ func _on_clear_pressed():
 	for node in $JiJIa/kick.get_children():
 		node.pressed = false
 	pass
+
