@@ -1,11 +1,11 @@
 extends Node2D
 
 var play = false
-var kick_paizi = [0,0,0,0 ,0,0,0,0 ,0,0,0,0 ,0,0,0,0] #16拍一个小节
+var kick_paizi = [0,0,0,0 ,0,0,0,0 ,0,0,0,0 ,0,0,0,0] # 16拍一个小节
 
 func _ready():
 	var bpm = 130
-	var per_pai = 0.46 #一拍多少秒
+	var per_pai = 0.46 # 一拍多少秒
 	#print_debug(per_pai)
 	print_debug(kick_paizi)
 	
@@ -13,7 +13,7 @@ func _ready():
 		node.connect("toggled",self,"_on_kick_toggled",[node.get_index()])
 	pass
 	
-#更新拍子
+# 更新拍子
 func _on_kick_toggled(butto_pressed:bool, button_index:int):
 	if butto_pressed:
 		kick_paizi[button_index] = 1
