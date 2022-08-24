@@ -52,9 +52,8 @@ func _on_Stop_pressed():
 
 func _on_Timer_timeout():
 	var next_kick = 0
-	if (cur_kick + 1) > 16:
-		cur_kick = next_kick
-		return
+	if (cur_kick + 1) = 16:
+		next_kick = 0
 	else:
 		next_kick = cur_kick + 1
 	
