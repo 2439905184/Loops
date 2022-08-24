@@ -265,4 +265,5 @@ wait_time = 0.46
 
 [connection signal="pressed" from="clear" to="." method="_on_clear_pressed"]
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Stop" to="." method="_on_Stop_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
