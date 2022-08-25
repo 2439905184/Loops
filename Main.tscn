@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://button_pressed.tres" type="StyleBox" id=1]
 [ext_resource path="res://MemoryUsedDisplay.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://play_hint.gd" type="Script" id=8]
 [ext_resource path="res://resource/20ttf.tres" type="DynamicFont" id=9]
 [ext_resource path="res://AdvMenu.gd" type="Script" id=10]
+[ext_resource path="res://ProgressBarCompat.gd" type="Script" id=11]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
@@ -19,11 +20,20 @@ __meta__ = {
 "_editor_description_": "通道机架"
 }
 
+[node name="ProgressBar" type="ProgressBar" parent="JiJIa"]
+margin_left = 177.0
+margin_top = 32.0
+margin_right = 582.0
+margin_bottom = 46.0
+custom_styles/fg = ExtResource( 1 )
+max_value = 16.0
+script = ExtResource( 11 )
+
 [node name="CheckBox" type="CheckBox" parent="JiJIa"]
-margin_left = 2.0
-margin_top = 35.0
-margin_right = 73.0
-margin_bottom = 59.0
+margin_left = 5.0
+margin_top = 55.0
+margin_right = 76.0
+margin_bottom = 79.0
 text = "enable"
 
 [node name="SpinBox" type="SpinBox" parent="JiJIa"]
@@ -33,26 +43,26 @@ margin_right = 101.0
 margin_bottom = 26.0
 
 [node name="Synth" type="Button" parent="JiJIa"]
-margin_left = 85.0
-margin_top = 39.0
-margin_right = 152.0
-margin_bottom = 68.0
+margin_left = 84.0
+margin_top = 54.0
+margin_right = 151.0
+margin_bottom = 83.0
 button_mask = 2
 text = "Kick"
 
 [node name="Container" type="ColorRect" parent="JiJIa"]
-margin_left = 161.0
-margin_top = 47.0
-margin_right = 172.0
-margin_bottom = 62.0
+margin_left = 160.0
+margin_top = 62.0
+margin_right = 171.0
+margin_bottom = 77.0
 color = Color( 0.235294, 0.231373, 0.231373, 1 )
 script = ExtResource( 8 )
 
 [node name="kick" type="HBoxContainer" parent="JiJIa"]
-margin_left = 179.0
-margin_top = 40.0
-margin_right = 541.0
-margin_bottom = 69.0
+margin_left = 178.0
+margin_top = 55.0
+margin_right = 540.0
+margin_bottom = 84.0
 script = ExtResource( 6 )
 
 [node name="Button" type="Button" parent="JiJIa/kick"]
@@ -199,10 +209,10 @@ custom_styles/normal = ExtResource( 7 )
 toggle_mode = true
 
 [node name="clear" type="Button" parent="JiJIa"]
-margin_left = 551.0
-margin_top = 41.0
-margin_right = 594.0
-margin_bottom = 70.0
+margin_left = 550.0
+margin_top = 56.0
+margin_right = 593.0
+margin_bottom = 85.0
 text = "clear"
 
 [node name="PopupPanel" type="PopupPanel" parent="JiJIa"]

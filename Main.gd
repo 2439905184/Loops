@@ -4,13 +4,14 @@ var play = false
 var kick_paizi = [0,0,0,0 ,0,0,0,0 ,0,0,0,0 ,0,0,0,0] # 16拍一个小节
 var cur_kick = 0
 signal sync_play_ui
-
+signal sync_progress
 func _ready():
 	var bpm = 130
 	var per_pai = 0.146 # 一拍多少秒
 	#print_debug(per_pai)
 	print_debug(kick_paizi)
-	connect("sync_play_ui",$JiJIa/Container,"_on_sync")
+	connect("sync_play_ui", $JiJIa/Container, "_on_sync")
+	connect("sync_progress", $JiJIa/ProgressBar, "_on_sync")
 	$Timer.wait_time = per_pai
 	
 	for node in $JiJIa/kick.get_children():
@@ -59,11 +60,14 @@ func _on_Timer_timeout():
 		next_kick = cur_kick + 1
 	
 	print_debug(cur_kick)
+	
 	if kick_paizi[cur_kick] == 1:
 		$Kick.play()
 		emit_signal("sync_play_ui",true)
 	elif kick_paizi[cur_kick] == 0:
 		emit_signal("sync_play_ui",false)
+		
+	emit_signal("sync_progress",cur_kick)
 	cur_kick = next_kick
 	
 	pass 
