@@ -52,13 +52,13 @@ func _on_Stop_pressed():
 
 func _on_Timer_timeout():
 	var next_kick = 0
-	if (cur_kick + 1) = 16:
+	if (cur_kick + 1) > 15:
 		next_kick = 0
 	else:
 		next_kick = cur_kick + 1
 	
 	print_debug(cur_kick)
-	if kick_paizi[cur_kick] == 1:	
+	if kick_paizi[cur_kick] == 1:
 		$Kick.play()
 	
 	cur_kick = next_kick
