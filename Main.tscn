@@ -88,7 +88,7 @@ margin_right = 115.0
 margin_bottom = 29.0
 size_flags_horizontal = 3
 custom_styles/hover = ExtResource( 7 )
-custom_styles/pressed = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 1 )
 custom_styles/normal = ExtResource( 7 )
 toggle_mode = true
 
