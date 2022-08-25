@@ -450,6 +450,133 @@ text = "查看混音器"
 [node name="HunYinQi" parent="." instance=ExtResource( 13 )]
 visible = false
 
+[node name="Sampler" type="Panel" parent="."]
+margin_left = 343.0
+margin_top = 117.0
+margin_right = 895.0
+margin_bottom = 489.0
+rect_min_size = Vector2( 64, 64 )
+__meta__ = {
+"_editor_description_": "采样器"
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Sampler"]
+margin_left = 11.0
+margin_top = 15.0
+margin_right = 195.0
+margin_bottom = 49.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="sampleButton" type="Button" parent="Sampler/HBoxContainer"]
+margin_right = 52.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "采样"
+
+[node name="envButton" type="Button" parent="Sampler/HBoxContainer"]
+margin_left = 56.0
+margin_right = 108.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "包络"
+
+[node name="modifyButton" type="Button" parent="Sampler/HBoxContainer"]
+margin_left = 112.0
+margin_right = 184.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "修改器"
+
+[node name="Content" type="PanelContainer" parent="Sampler"]
+margin_left = 5.0
+margin_top = 56.0
+margin_right = 529.0
+margin_bottom = 368.0
+
+[node name="Label" type="Label" parent="Sampler/Content"]
+margin_left = 7.0
+margin_top = 142.0
+margin_right = 67.0
+margin_bottom = 170.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 9 )
+text = "采样器"
+
+[node name="TextureRect" type="TextureRect" parent="Sampler/Content"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 7.0
+margin_bottom = 7.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_editor_description_": "波形"
+}
+
+[node name="bar" type="HBoxContainer" parent="Sampler"]
+margin_left = 473.0
+margin_top = 1.0
+margin_right = 551.0
+margin_bottom = 35.0
+
+[node name="Button" type="Button" parent="Sampler/bar"]
+margin_right = 37.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
+text = "-"
+
+[node name="Button2" type="Button" parent="Sampler/bar"]
+margin_left = 41.0
+margin_right = 78.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
+text = "x"
+
+[node name="hbox" type="HBoxContainer" parent="Sampler"]
+margin_left = 7.0
+margin_top = 53.0
+margin_right = 304.0
+margin_bottom = 87.0
+
+[node name="panButton" type="Button" parent="Sampler/hbox"]
+margin_right = 52.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "声像"
+
+[node name="volumeButton" type="Button" parent="Sampler/hbox"]
+margin_left = 56.0
+margin_right = 108.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "音量"
+
+[node name="modX" type="Button" parent="Sampler/hbox"]
+margin_left = 112.0
+margin_right = 174.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "调制x"
+
+[node name="mobY" type="Button" parent="Sampler/hbox"]
+margin_left = 178.0
+margin_right = 241.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "调制y"
+
+[node name="pitchButton" type="Button" parent="Sampler/hbox"]
+margin_left = 245.0
+margin_right = 297.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "音高"
+
 [connection signal="pressed" from="JiJIa/Synth" to="JiJIa/PopupPanel" method="_on_Synth_pressed"]
 [connection signal="pressed" from="JiJIa/clear" to="." method="_on_clear_pressed"]
 [connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer2/rename" to="Rnamer" method="_on_rename_pressed"]
