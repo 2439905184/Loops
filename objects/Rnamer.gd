@@ -16,6 +16,12 @@ func _on_ok():
 	hide_self()
 	pass
 
+func _input(event):
+	if event.as_text() == "Enter":
+		_on_ok()
+	elif event.as_text() == "Escape":
+		hide_self()
+
 func hide_self():
 	self.hide()
 	pass
