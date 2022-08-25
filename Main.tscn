@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://button_pressed.tres" type="StyleBox" id=1]
 [ext_resource path="res://MemoryUsedDisplay.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://AdvMenu.gd" type="Script" id=10]
 [ext_resource path="res://ProgressBarCompat.gd" type="Script" id=11]
 [ext_resource path="res://objects/Rnamer.gd" type="Script" id=12]
+[ext_resource path="res://objects/HunYinQi.tscn" type="PackedScene" id=13]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
@@ -437,6 +438,18 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 9 )
 text = "x"
 
+[node name="ViewHun" type="Button" parent="."]
+margin_left = 874.0
+margin_top = 6.0
+margin_right = 886.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 9 )
+toggle_mode = true
+text = "查看混音器"
+
+[node name="HunYinQi" parent="." instance=ExtResource( 13 )]
+visible = false
+
 [connection signal="pressed" from="JiJIa/Synth" to="JiJIa/PopupPanel" method="_on_Synth_pressed"]
 [connection signal="pressed" from="JiJIa/clear" to="." method="_on_clear_pressed"]
 [connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer2/rename" to="Rnamer" method="_on_rename_pressed"]
@@ -449,3 +462,4 @@ text = "x"
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Stop" to="." method="_on_Stop_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="toggled" from="ViewHun" to="HunYinQi" method="_on_ViewHun_toggled"]

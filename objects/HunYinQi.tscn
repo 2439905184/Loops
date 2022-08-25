@@ -1,0 +1,300 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resource/20ttf.tres" type="DynamicFont" id=1]
+[ext_resource path="res://objects/HunYinQi.gd" type="Script" id=2]
+[ext_resource path="res://objects/RealTimeVolume.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.254902, 0.309804, 0.34902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.592157, 0.447059, 0.447059, 1 )
+
+[node name="HunYinQi" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1008.0
+margin_bottom = 585.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="index" type="Label" parent="Panel"]
+margin_left = 49.0
+margin_top = 1.0
+margin_right = 57.0
+margin_bottom = 15.0
+text = "1"
+
+[node name="RealTimeVolume" type="Label" parent="Panel"]
+margin_left = 16.0
+margin_top = 50.0
+margin_right = 116.0
+margin_bottom = 78.0
+custom_fonts/font = ExtResource( 1 )
+text = "实时音量:0 dbfs"
+script = ExtResource( 3 )
+
+[node name="CheckBox" type="CheckBox" parent="Panel"]
+margin_left = 32.0
+margin_top = 100.0
+margin_right = 103.0
+margin_bottom = 124.0
+pressed = true
+text = "enable"
+
+[node name="volume" type="VSlider" parent="Panel"]
+margin_left = 30.0
+margin_top = 160.0
+margin_right = 92.0
+margin_bottom = 505.0
+
+[node name="pan" type="HSlider" parent="Panel"]
+margin_left = 38.0
+margin_top = 133.0
+margin_right = 98.0
+margin_bottom = 149.0
+
+[node name="panValue" type="Label" parent="Panel"]
+margin_left = 58.0
+margin_top = 146.0
+margin_right = 78.0
+margin_bottom = 160.0
+text = "0%"
+
+[node name="volumeValue" type="Label" parent="Panel"]
+margin_left = 67.0
+margin_top = 228.0
+margin_right = 87.0
+margin_bottom = 242.0
+text = "0%"
+
+[node name="Effector" type="Panel" parent="Panel"]
+margin_left = 826.0
+margin_top = 130.0
+margin_right = 996.0
+margin_bottom = 526.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Box" type="VBoxContainer" parent="Panel/Effector"]
+margin_left = 6.0
+margin_top = 27.0
+margin_right = 152.0
+margin_bottom = 365.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_right = 146.0
+margin_bottom = 34.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 38.0
+margin_right = 146.0
+margin_bottom = 72.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer2"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer2"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 76.0
+margin_right = 146.0
+margin_bottom = 110.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer3"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer3"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 114.0
+margin_right = 146.0
+margin_bottom = 148.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer4"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer4"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 152.0
+margin_right = 146.0
+margin_bottom = 186.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer5"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer5"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 190.0
+margin_right = 146.0
+margin_bottom = 224.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer6"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer6"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 228.0
+margin_right = 146.0
+margin_bottom = 262.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer7"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer7"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 266.0
+margin_right = 146.0
+margin_bottom = 300.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer8"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer8"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Panel/Effector/Box"]
+margin_top = 304.0
+margin_right = 146.0
+margin_bottom = 338.0
+
+[node name="CheckBox" type="CheckBox" parent="Panel/Effector/Box/HBoxContainer9"]
+margin_right = 71.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.447059, 0.854902, 0.282353, 1 )
+text = "enable"
+
+[node name="Effector1" type="Button" parent="Panel/Effector/Box/HBoxContainer9"]
+margin_left = 75.0
+margin_right = 139.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 1 )
+text = "插槽1"
+
+[node name="Label" type="Label" parent="Panel/Effector"]
+margin_right = 165.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "效果器"
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+margin_left = 108.0
+margin_top = 11.0
+margin_right = 148.0
+margin_bottom = 94.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 32.0
+margin_top = 18.0
+margin_right = 76.0
+margin_bottom = 32.0
+text = "Master"
+
+[node name="bar" type="HBoxContainer" parent="."]
+margin_left = 887.0
+margin_right = 1008.0
+margin_bottom = 38.0
+
+[node name="minWindow" type="Button" parent="bar"]
+margin_right = 37.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "-"
+
+[node name="maxWindow" type="Button" parent="bar"]
+margin_left = 41.0
+margin_right = 79.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "口"
+
+[node name="closeWindow" type="Button" parent="bar"]
+margin_left = 83.0
+margin_right = 121.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "x"
+
+[connection signal="value_changed" from="Panel/volume" to="." method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Panel/pan" to="." method="_on_pan_value_changed"]
+[connection signal="pressed" from="bar/minWindow" to="." method="_on_minWindow_pressed"]
+[connection signal="pressed" from="bar/maxWindow" to="." method="_on_maxWindow_pressed"]
+[connection signal="pressed" from="bar/closeWindow" to="." method="_on_closeWindow_pressed"]
