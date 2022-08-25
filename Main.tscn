@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://button_pressed.tres" type="StyleBox" id=1]
 [ext_resource path="res://MemoryUsedDisplay.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://resource/20ttf.tres" type="DynamicFont" id=9]
 [ext_resource path="res://AdvMenu.gd" type="Script" id=10]
 [ext_resource path="res://ProgressBarCompat.gd" type="Script" id=11]
+[ext_resource path="res://objects/Rnamer.gd" type="Script" id=12]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 4 )
@@ -47,6 +48,7 @@ margin_left = 84.0
 margin_top = 54.0
 margin_right = 151.0
 margin_bottom = 83.0
+custom_fonts/font = ExtResource( 9 )
 button_mask = 2
 text = "Kick"
 
@@ -216,34 +218,71 @@ margin_bottom = 85.0
 text = "clear"
 
 [node name="PopupPanel" type="PopupPanel" parent="JiJIa"]
+visible = true
 margin_left = 157.0
 margin_top = 35.0
-margin_right = 287.0
-margin_bottom = 183.0
+margin_right = 355.0
+margin_bottom = 204.0
 script = ExtResource( 10 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="JiJIa/PopupPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="JiJIa/PopupPanel"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 126.0
-margin_bottom = 144.0
+margin_right = 194.0
+margin_bottom = 165.0
 
-[node name="two" type="Button" parent="JiJIa/PopupPanel/VBoxContainer"]
-margin_right = 122.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="JiJIa/PopupPanel/HBoxContainer"]
+margin_right = 72.0
+margin_bottom = 161.0
+
+[node name="pianoRoll" type="Button" parent="JiJIa/PopupPanel/HBoxContainer/VBoxContainer2"]
+margin_right = 72.0
+margin_bottom = 34.0
+custom_fonts/font = ExtResource( 9 )
+text = "钢琴窗"
+
+[node name="rename" type="Button" parent="JiJIa/PopupPanel/HBoxContainer/VBoxContainer2"]
+margin_top = 38.0
+margin_right = 72.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 9 )
+text = "重命名"
+
+[node name="insert" type="Button" parent="JiJIa/PopupPanel/HBoxContainer/VBoxContainer2"]
+margin_top = 76.0
+margin_right = 72.0
+margin_bottom = 110.0
+custom_fonts/font = ExtResource( 9 )
+text = "插入"
+
+[node name="replace" type="Button" parent="JiJIa/PopupPanel/HBoxContainer/VBoxContainer2"]
+margin_top = 114.0
+margin_right = 72.0
+margin_bottom = 148.0
+custom_fonts/font = ExtResource( 9 )
+text = "替换"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="JiJIa/PopupPanel/HBoxContainer"]
+margin_left = 76.0
+margin_right = 180.0
+margin_bottom = 161.0
+
+[node name="two" type="Button" parent="JiJIa/PopupPanel/HBoxContainer/VBoxContainer"]
+margin_right = 104.0
 margin_bottom = 34.0
 custom_fonts/font = ExtResource( 9 )
 text = "每2步填充"
 
-[node name="four" type="Button" parent="JiJIa/PopupPanel/VBoxContainer"]
+[node name="four" type="Button" parent="JiJIa/PopupPanel/HBoxContainer/VBoxContainer"]
 margin_top = 38.0
-margin_right = 122.0
+margin_right = 104.0
 margin_bottom = 72.0
 custom_fonts/font = ExtResource( 9 )
 text = "每4步填充"
 
-[node name="eight" type="Button" parent="JiJIa/PopupPanel/VBoxContainer"]
+[node name="eight" type="Button" parent="JiJIa/PopupPanel/HBoxContainer/VBoxContainer"]
 margin_top = 76.0
-margin_right = 122.0
+margin_right = 104.0
 margin_bottom = 110.0
 custom_fonts/font = ExtResource( 9 )
 text = "每8步填充"
@@ -321,30 +360,34 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 867.0
-margin_top = 7.0
-margin_right = 949.0
-margin_bottom = 27.0
+margin_left = 132.0
+margin_top = 3.0
+margin_right = 236.0
+margin_bottom = 31.0
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Play" type="Button" parent="HBoxContainer"]
-margin_right = 38.0
-margin_bottom = 20.0
+margin_right = 50.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Play"
 
 [node name="Stop" type="Button" parent="HBoxContainer"]
-margin_left = 42.0
-margin_right = 82.0
-margin_bottom = 20.0
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 28.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Stop"
 
 [node name="SpinBox" type="SpinBox" parent="."]
-margin_left = 952.0
-margin_top = 8.0
-margin_right = 1026.0
-margin_bottom = 32.0
+margin_left = 244.0
+margin_top = -2.0
+margin_right = 318.0
+margin_bottom = 22.0
 value = 100.0
 prefix = "bpm"
 
@@ -354,14 +397,55 @@ stream = ExtResource( 5 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.46
 
+[node name="Rnamer" type="Panel" parent="."]
+visible = false
+margin_left = 370.0
+margin_top = 108.0
+margin_right = 855.0
+margin_bottom = 399.0
+custom_styles/panel = ExtResource( 7 )
+script = ExtResource( 12 )
+
+[node name="renameEdit" type="LineEdit" parent="Rnamer"]
+margin_left = 134.0
+margin_top = 83.0
+margin_right = 341.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 9 )
+caret_blink = true
+
+[node name="hbox" type="HBoxContainer" parent="Rnamer"]
+margin_left = 139.0
+margin_top = 126.0
+margin_right = 228.0
+margin_bottom = 166.0
+
+[node name="ok" type="Button" parent="Rnamer/hbox"]
+margin_right = 42.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
+text = "√"
+
+[node name="cancel" type="Button" parent="Rnamer/hbox"]
+margin_left = 46.0
+margin_right = 89.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 9 )
+text = "x"
+
 [connection signal="pressed" from="JiJIa/Synth" to="JiJIa/PopupPanel" method="_on_Synth_pressed"]
 [connection signal="pressed" from="JiJIa/clear" to="." method="_on_clear_pressed"]
-[connection signal="pressed" from="JiJIa/PopupPanel/VBoxContainer/two" to="JiJIa/kick" method="_on_2_pressed"]
-[connection signal="pressed" from="JiJIa/PopupPanel/VBoxContainer/two" to="JiJIa/PopupPanel" method="_on_2_pressed"]
-[connection signal="pressed" from="JiJIa/PopupPanel/VBoxContainer/four" to="JiJIa/kick" method="_on_4_pressed"]
-[connection signal="pressed" from="JiJIa/PopupPanel/VBoxContainer/four" to="JiJIa/PopupPanel" method="_on_4_pressed"]
-[connection signal="pressed" from="JiJIa/PopupPanel/VBoxContainer/eight" to="JiJIa/kick" method="_on_8_pressed"]
-[connection signal="pressed" from="JiJIa/PopupPanel/VBoxContainer/eight" to="JiJIa/PopupPanel" method="_on_eight_pressed"]
+[connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer2/rename" to="Rnamer" method="_on_rename_pressed"]
+[connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer/two" to="JiJIa/kick" method="_on_2_pressed"]
+[connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer/two" to="JiJIa/PopupPanel" method="_on_2_pressed"]
+[connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer/four" to="JiJIa/kick" method="_on_4_pressed"]
+[connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer/four" to="JiJIa/PopupPanel" method="_on_4_pressed"]
+[connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer/eight" to="JiJIa/kick" method="_on_8_pressed"]
+[connection signal="pressed" from="JiJIa/PopupPanel/HBoxContainer/VBoxContainer/eight" to="JiJIa/PopupPanel" method="_on_eight_pressed"]
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Stop" to="." method="_on_Stop_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
